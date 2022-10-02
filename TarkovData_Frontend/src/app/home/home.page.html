@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <img class="killa_icon" src="https://preview.redd.it/0erpyzmffv561.png?auto=webp&s=305065e13a3e14fbd19eca6c407f725b16740138" alt="killa icon">
+
+    <ion-toolbar style="display: flex; ">
+      <ion-title size="medium">Killa-TData</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-searchbar [(ngModel)]="search"></ion-searchbar>
+      <ion-buttons slot="end">
+        <ion-button color="warning" href="/ammo-add">+New</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let x of ammo | filter:search">
+      <app-modal style="width: 100%;" [id]="x.id" [name]="x.name" [link]="x.image512pxLink" [caliber]="x.caliber">
+      </app-modal>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

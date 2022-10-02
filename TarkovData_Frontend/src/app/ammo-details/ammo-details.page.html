@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button href="/home">Back</ion-button>
+    </ion-buttons>
+    <ion-title>{{this.name}} | {{this.caliber}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-img src="{{this.image512pxLink}}"></ion-img>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Image link</ion-label>
+    <ion-input id="dataBox1" [(ngModel)]="image512pxLink" value="{{this.image512pxLink}}" required="true"
+      readonly="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">name</ion-label>
+    <ion-input [(ngModel)]="name" id="dataBox2" value="{{this.name}}" required="true" readonly="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Caliber</ion-label>
+    <ion-input [(ngModel)]="caliber" id="dataBox3" value="{{this.caliber}}" required="true" readonly="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Short Name</ion-label>
+    <ion-input [(ngModel)]="shortName" id="dataBox4" value="{{this.shortName}}" required="true" readonly="true">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Damage</ion-label>
+    <ion-input [(ngModel)]="damage" id="dataBox5" type="number" value="{{this.damage}}" required="true" readonly="true">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Armor Damage</ion-label>
+    <ion-input [(ngModel)]="armorDamage" id="dataBox6" type="number" value="{{this.armorDamage}}" required="true"
+      readonly="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Ammo type</ion-label>
+    <ion-input [(ngModel)]="ammoType" id="dataBox7" value="{{this.ammoType}}" required="true" readonly="true">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Weight in g</ion-label>
+    <ion-input [(ngModel)]="weight" id="dataBox8" type="number" value="{{this.weight}}" required="true" readonly="true">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Fragmentation chance in %</ion-label>
+    <ion-input id="dataBox9" type="number" value="{{this.fragmentationChance}}" required="true" readonly="true">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Ricochet chance in %</ion-label>
+    <ion-input [(ngModel)]="ricochetChance" id="dataBox10" type="number" value="{{this.ricochetChance}}" required="true"
+      readonly="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Heavy bleed chance in %</ion-label>
+    <ion-input [(ngModel)]="heavyBleedModifier" id="dataBox11" type="number" value="{{this.heavyBleedModifier}}"
+      required="true" readonly="true">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Light bleed chance in %</ion-label>
+    <ion-input [(ngModel)]="lightBleedModifier" id="dataBox12" type="number" value="{{this.lightBleedModifier}}"
+      required="true" readonly="true">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Tracer</ion-label>
+    <ion-input [(ngModel)]="tracer" id="dataBox13" value="{{this.tracer}}" required="true" readonly="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Tracer color</ion-label>
+    <ion-input [(ngModel)]="tracerColor" id="dataBox14" value="{{this.tracerColor}}" required="true" readonly="true">
+    </ion-input>
+  </ion-item>
+  <div>
+    <h2>FleaMarket T-Data</h2>
+    <p>This data is in real time from Tarkov API and isn't editable.</p>
+    <ion-label class="FleaTData" position="stacked">Average 24H price</ion-label>
+    <ion-input value="{{this.avg24hPrice}}" required="true" readonly="true"></ion-input>
+    <ion-label class="FleaTDataLow" position="stacked">Last low price</ion-label>
+    <ion-input value="{{this.lastLowPrice}}" required="true" readonly="true"></ion-input>
+    <div>
+      <ion-button id="editbtn_editdata" (click)="onclickEdit()" style="display: block;">Edit</ion-button>
+      <ion-button id="editbtn_senddata" (click)="onclickEdit()" style="display: none;">Send data?</ion-button>
+      <ion-button id="editbtn_senddata" (click)="onclickDelete()" style="display: block;" color="danger">Delete
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

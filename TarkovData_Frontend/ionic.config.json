@@ -1,0 +1,7 @@
+{
+  "name": "TarkovData_Frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

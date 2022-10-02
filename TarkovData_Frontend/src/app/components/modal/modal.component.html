@@ -1,0 +1,14 @@
+<ion-card>
+  <ion-card-header>
+    <div>
+      <img src={{link}} width="60px" height="60px"/>
+      <ion-card-title>{{name}}</ion-card-title>
+    </div>
+  </ion-card-header>
+
+  <ion-card-content>{{caliber}}</ion-card-content>
+  <ion-item>
+    <!-- <ion-label style="text-align:end;">See more details</ion-label> -->
+    <ion-button style="margin: auto; width: 100%;"  color="warning" fill="outline" (click)="goToDetails()">View</ion-button>
+  </ion-item>
+</ion-card>
